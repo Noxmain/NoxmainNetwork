@@ -9,14 +9,14 @@ NeuralNetwork is a Python3 module to create, train and test neural networks with
 After downloading the neural_network.py you can use the module for one project or install it permanently for your Python.
 
 ## Install for one project
-Just drag the neural_network.py into you project folder and import it by using `import neural_network`.
+Just drag the neural_network.py into your project folder and import it by using `import neural_network`.
 
 ## Install for all projects
 Browse for your Python framework folder and move the file to `Python.framework/Version/3.x/lib/python3.x`. Now you can import this module into every Phyton file by using `import neural_network`
 
 # How to use
 After you imported `neural_network` you can create a neural network by using the class `NeuralNetwork`. This class has the parameters `neurons, random=True, silent=False`.
-* `neurons: list` Contains the neurons of the NeuralNetwork. Each item is a layer with [itemvalue] neurons. The NeuralNetwork needs at least two layers and one neuron per layer.
+* `neurons: list` Contains the neurons of the NeuralNetwork. Each item is a layer with [itemvalue] neurons. The NeuralNetwork needs at least two layers and one neuron in each layer.
 * `random: bool` If true (default), the weights will be random when creating the NeuralNetwork. Otherwise, every weight will be 0.0.
 * `silent: bool` If false (default), the NeuralNetwork prints a message when loading or saving. Otherwise, it will not.
 
@@ -54,8 +54,9 @@ outputs = nn.query([0.98, 0.58, 0.51, 0.48, 0.12, 0.36, 0.14, 0.61, 0.92, 0.69, 
 
 ---
 
-You can save a NeuralNetwork by using the function `save`. If this file already exists, it will be overwritten. The function has the parameter `name`.
+You can save a NeuralNetwork by using the function `save`. If this file already exists, it will be overwritten. The function has the parameters `name, hide=False`.
 * `name: str` The filename of the saved NeuralNetwork. The file will be called [name].npy.
+* `hide: bool` If true, a dot is appended to the front to hide the file. Is false by default.
 
 Example:
 ```
@@ -64,8 +65,9 @@ nn.save("nn")
 
 ---
 
-You can load a saved NeuralNetwork by using the function `load`. By loading a NeuralNetwork the current weights will be overwritten by the loaded ones. The function has the parameter `name`.
+You can load a saved NeuralNetwork by using the function `load`. By loading a NeuralNetwork the current weights will be overwritten by the loaded ones. The function has the parameters `name, hidden=False`.
 * `name: str` The filename of the saved NeuralNetwork. It tries to load the file called [name].npy.
+* `hidden: bool` If false (default), it tries to load a visible file. Otherwise, it tries to load a hidden file (beginning with a dot).
 
 Example:
 ```
