@@ -2,8 +2,8 @@
 NeuralNetwork is a Python3 module to create, train and test neural networks with mutible layers. To use this module you should know how a neural network works.
 
 # Content
-- [How to use](#how-to-use)
 - [Installation](#installation)
+- [How to use](#how-to-use)
 
 ---
 
