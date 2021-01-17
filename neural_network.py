@@ -119,7 +119,7 @@ class NeuralNetwork:
 
         return o
 
-    def save(self, name):
+    def save(self, name, hide=False):
         """
         save(self, name)
         Saves the NeuralNetwork as a .npy file in the same folder as
@@ -129,15 +129,21 @@ class NeuralNetwork:
         ----------
         name: string
             Filename: [name].npy
+        hide: bool
+            If false (default), the file will be saved as named.
+            Otherwise a dot is appended to the front to hide the file.
         """
 
         save = [self.neurons, self.weights]
-        np.save(str(name + ".npy"), save)
+        prefix = ""
+        if hide:
+            prefix = "."
+        np.save(str(prefix + name + ".npy"), save)
 
         if not self.silent:
             print("[NeuralNetwork]: Network \"" + str(name) + "\" with neurons " + str(self.neurons) + " saved!")
 
-    def load(self, name):
+    def load(self, name, hidden=False):
         """
         load(self, name)
         Loads the NeuralNetwork from a .npy file in the same folder as
@@ -147,9 +153,16 @@ class NeuralNetwork:
         ----------
         name: string
             Filename: [name].npy
+        hidden: bool
+            If false (default), it tries to load a visible file.
+            Otherwise it tries to load a hidden file. (Beginning with
+            a dot)
         """
 
-        load = np.load(name + ".npy", encoding="latin1", allow_pickle=True)
+        prefix = ""
+        if hidden:
+            prefix = "."
+        load = np.load(prefix + name + ".npy", encoding="latin1", allow_pickle=True)
         self.neurons = load[0]
         self.weights = load[1]
 
