@@ -30,7 +30,7 @@ class NeuralNetwork:
             NeuralNetwork. Otherwise, every weight will be 0.0.
         silent: bool, optional
             If false (default), the NeuralNetwork will print a message when loading
-            or saving.  Otherwise, it will not.
+            or saving. Otherwise, it will not.
         """
 
         self.neurons = neurons
@@ -65,8 +65,8 @@ class NeuralNetwork:
             Values of list items: float between 0.01 and 1.0.
         learningrate: float
             Value: between 0.01 and 1.0.
-            Small learningrate: slower learning but more accurate results
-            Big learningrate: faster learning but more inaccurate results
+            Small learningrate: slower learning but more accurate results.
+            Big learningrate: faster learning but more inaccurate results.
         """
 
         i = np.array(np.asfarray(inputs), ndmin=2).T
@@ -129,9 +129,9 @@ class NeuralNetwork:
         ----------
         name: string
             Filename: [name].npy
-        hide: bool
+        hide: bool, optional
             If false (default), the file will be saved as named.
-            Otherwise a dot is appended to the front to hide the file.
+            Otherwise, a dot is appended to the front to hide the file.
         """
 
         save = [self.neurons, self.weights]
@@ -153,9 +153,9 @@ class NeuralNetwork:
         ----------
         name: string
             Filename: [name].npy
-        hidden: bool
+        hidden: bool, optional
             If false (default), it tries to load a visible file.
-            Otherwise it tries to load a hidden file. (Beginning with
+            Otherwise, it tries to load a hidden file. (Beginning with
             a dot)
         """
 
