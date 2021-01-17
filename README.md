@@ -5,8 +5,6 @@ NeuralNetwork is a Python3 module to create, train and test neural networks with
 - [Installation](#installation)
 - [How to use](#how-to-use)
 
----
-
 # Installation
 After downloading the neural_network.py you can use the module for one project or install it permanently for your Python.
 
@@ -15,8 +13,6 @@ Just drag the neural_network.py into you project folder and import it by using `
 
 ## Install for all projects
 Browse for your Python framework folder and move the file to `Python.framework/Version/3.x/lib/python3.x`. Now you can import this module into every Phyton file by using `import neural_network`
-
----
 
 # How to use
 After you imported `neural_network` you can create a neural network by using the class `NeuralNetwork`. This class has the parameters `neurons, random=True, silent=False`.
