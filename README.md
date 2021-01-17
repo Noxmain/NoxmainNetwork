@@ -16,6 +16,8 @@ Just drag the neural_network.py into you project folder and import it by using `
 ## Install for all projects
 Browse for your Python framework folder and move the file to `Python.framework/Version/3.x/lib/python3.x`. Now you can import this module into every Phyton file by using `import neural_network`
 
+---
+
 # How to use
 After you imported `neural_network` you can create a neural network by using the class `NeuralNetwork`. This class has the parameters `neurons, random=True, silent=False`.
 * `neurons: list` Contains the neurons of the NeuralNetwork. Each item is a layer with [itemvalue] neurons. The NeuralNetwork needs at least two layers and one neuron per layer.
