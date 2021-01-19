@@ -1,30 +1,27 @@
-# NeuralNetwork
-NeuralNetwork is a Python3 module to create, train and test neural networks with mutible layers. To use this module you should know how a neural network works.
+# NoxmainNetwork
+NoxmainNetwork is a Python3 module to create, train and test neural networks with mutiple layers. To use this module you should know how a neural network works.
 
 # Content
 - [Installation](#installation)
 - [How to use](#how-to-use)
 
 # Installation
-After downloading the neural_network.py you can use the module for one project or install it permanently for your Python.
-
-## Install for one project
-Just drag the neural_network.py into your project folder and import it by using `import neural_network`.
-
-## Install for all projects
-Browse for your Python framework folder and move the file to `Python.framework/Version/3.x/lib/python3.x`. Now you can import this module into every Phyton file by using `import neural_network`
+To install the NoxmainNetwork package, just dowload it via pip. To do so execute this command in your Terminal/cmd:
+```
+pip3 install NoxmainNetwork
+```
 
 # How to use
-After you imported `neural_network` you can create a neural network by using the class `NeuralNetwork`. This class has the parameters `neurons, random=True, silent=False`.
-* `neurons: list` Contains the neurons of the NeuralNetwork. Each item is a layer with [itemvalue] neurons. The NeuralNetwork needs at least two layers and one neuron in each layer.
-* `random: bool` If true (default), the weights will be random when creating the NeuralNetwork. Otherwise, every weight will be 0.0.
-* `silent: bool` If false (default), the NeuralNetwork prints a message when loading or saving. Otherwise, it will not.
+After installing the module via pip, you can import it to a python project. Now you can create a neural network by using the class `NoxmainNetwork`. This class has the parameters `neurons, random=True, silent=False`.
+* `neurons: list` Contains the neurons of the neural network. Each item is a layer with [itemvalue] neurons. The neural network needs at least two layers and one neuron in each layer.
+* `random: bool` If true (default), the weights will be random when creating the neural network. Otherwise, every weight will be 0.0.
+* `silent: bool` If false (default), the NoxmainNetwork prints a message when loading or saving. Otherwise, it will not.
 
 Example:
 ```
-import neural_network
+import NoxmainNetwork
 
-nn = neural_network.NeuralNetwork([50, 30, 10])
+nn = NoxmainNetwork.NoxmainNetwork([50, 30, 10])
 ```
 
 ---
@@ -45,7 +42,7 @@ nn.train([0.05, 0.99, 0.95, 0.88, 0.98, 0.46, 0.59, 0.89, 0.54, 0.27, 0.93, 0.37
 
 After training the neural network, you can test it by using the funtion `query`. It has the parameter `inputs` and returns a list.
 * `inputs: list` Contains one training iteration data. The length of the list has to be the number of neurons in the first layer. The values have to be betweet 0 and 1.
-* `return` The coutput from the NeuralNetwork.
+* `return` The coutput from the NoxmainNetwork.
 
 Example:
 ```
@@ -54,8 +51,8 @@ outputs = nn.query([0.98, 0.58, 0.51, 0.48, 0.12, 0.36, 0.14, 0.61, 0.92, 0.69, 
 
 ---
 
-You can save a NeuralNetwork by using the function `save`. If this file already exists, it will be overwritten. The function has the parameters `name, hide=False`.
-* `name: str` The filename of the saved NeuralNetwork. The file will be called [name].npy.
+You can save a neural network by using the function `save`. If this file already exists, it will be overwritten. The function has the parameters `name, hide=False`.
+* `name: str` The filename of the saved NoxmainNetwork. The file will be called [name].npy.
 * `hide: bool` If true, a dot is appended to the front to hide the file. Is false by default.
 
 Example:
@@ -65,8 +62,8 @@ nn.save("nn")
 
 ---
 
-You can load a saved NeuralNetwork by using the function `load`. By loading a NeuralNetwork the current weights will be overwritten by the loaded ones. The function has the parameters `name, hidden=False`.
-* `name: str` The filename of the saved NeuralNetwork. It tries to load the file called [name].npy.
+You can load a saved neural network by using the function `load`. By loading a neural network the current weights will be overwritten by the loaded ones. The function has the parameters `name, hidden=False`.
+* `name: str` The filename of the saved NoxmainNetwork. It tries to load the file called [name].npy.
 * `hidden: bool` If false (default), it tries to load a visible file. Otherwise, it tries to load a hidden file (beginning with a dot).
 
 Example:

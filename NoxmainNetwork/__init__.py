@@ -1,7 +1,9 @@
-# Neural Network
+# NoxmainNetwork
+# a Python3 module to create, train and test neural networks with mutiple layers
 # by Noxmain
 # -*- coding: utf-8 -*-
 import numpy as np
+
 
 def sigmoid(x):
     for y in range(len(x)):
@@ -12,24 +14,25 @@ def sigmoid(x):
             x[y, 0] = 1 / (1 + pow(3, -x[y, 0]))
     return x
 
-class NeuralNetwork:
+
+class NoxmainNetwork:
     def __init__(self, neurons, random=True, silent=False):
         """
-        NeuralNetwork(self, neurons, random=True, silent=False)
-        Creates a NeuralNetwork.
+        NoxmainNetwork(self, neurons, random=True, silent=False)
+        Creates a neural network.
 
         Parameters
         ----------
         neurons: list
             Length of the list: number of layers.
             Values of list items: int > 1.
-            Contains the neurons of the NeuralNetwork. Each item is a layer with
+            Contains the neurons of the NoxmainNetwork. Each item is a layer with
             [itemvalue] neurons.
         random: bool, optional
             If true (default), the weights will be random when creating the
-            NeuralNetwork. Otherwise, every weight will be 0.0.
+            NoxmainNetwork. Otherwise, every weight will be 0.0.
         silent: bool, optional
-            If false (default), the NeuralNetwork will print a message when loading
+            If false (default), the NoxmainNetwork will print a message when loading
             or saving. Otherwise, it will not.
         """
 
@@ -53,7 +56,7 @@ class NeuralNetwork:
     def train(self, inputs, targets, learningrate):
         """
         train(self, inputs, targets, learningrate)
-        Trains the NeuralNetwork.
+        Trains the NoxmainNetwork.
 
         Parameters
         ----------
@@ -91,7 +94,7 @@ class NeuralNetwork:
     def query(self, inputs):
         """
         query(self, inputs)
-        Query the NeuralNetwork.
+        Query the NoxmainNetwork.
 
         Parameters
         ----------
@@ -104,7 +107,7 @@ class NeuralNetwork:
         o: list
             Length of list: number of neurons in the last layer (neurons[len(neurons) - 1]).
             Values of list items: float between 0.01 and 1.0.
-            NeuralNetwork outputs.
+            NoxmainNetwork outputs.
         """
 
         i = np.array(np.asfarray(inputs), ndmin=2).T
@@ -122,8 +125,8 @@ class NeuralNetwork:
     def save(self, name, hide=False):
         """
         save(self, name)
-        Saves the NeuralNetwork as a .npy file in the same folder as
-        this neural_network.py file.
+        Saves the NoxmainNetwork as a .npy file in the same folder as
+        this module.
 
         Parameters
         ----------
@@ -141,13 +144,13 @@ class NeuralNetwork:
         np.save(str(prefix + name + ".npy"), save)
 
         if not self.silent:
-            print("[NeuralNetwork]: Network \"" + str(name) + "\" with neurons " + str(self.neurons) + " saved!")
+            print("[NoxmainNetwork]: Network \"" + str(name) + "\" with neurons " + str(self.neurons) + " saved!")
 
     def load(self, name, hidden=False):
         """
         load(self, name)
-        Loads the NeuralNetwork from a .npy file in the same folder as
-        this neural_network.py file.
+        Loads the NoxmainNetwork from a .npy file in the same folder as
+        this module.
 
         Parameters
         ----------
@@ -167,4 +170,4 @@ class NeuralNetwork:
         self.weights = load[1]
 
         if not self.silent:
-            print("[NeuralNetwork]: Network \"" + str(name) + "\" with neurons " + str(self.neurons) + " loaded!")
+            print("[NoxmainNetwork]: Network \"" + str(name) + "\" with neurons " + str(self.neurons) + " loaded!")
